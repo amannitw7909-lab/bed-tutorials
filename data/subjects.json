@@ -1,0 +1,55 @@
+[
+  {
+    "semId": "sem1",
+    "code": "CC2",
+    "name": "Educational Psychology (Childhood & Growing Up)",
+    "shortName": "Educational Psychology",
+    "totalTopics": 16,
+    "units": [
+      {
+        "index": 0,
+        "name": "Unit 1: Educational Psychology & Learner Development",
+        "mdFile": "./content/sem1/cc2/unit1.md"
+      },
+      {
+        "index": 1,
+        "name": "Unit 2: Developmental Characteristics & Multiple Childhoods",
+        "mdFile": "./content/sem1/cc2/unit2.md"
+      },
+      {
+        "index": 2,
+        "name": "Unit 3: Personality, Psychosocial & Emotional Development",
+        "mdFile": "./content/sem1/cc2/unit3.md"
+      },
+      {
+        "index": 3,
+        "name": "Unit 4: Socialization, Schooling & Inclusive Development",
+        "mdFile": "./content/sem1/cc2/unit4.md"
+      }
+    ]
+  },
+  {
+    "semId": "sem1",
+    "code": "CC3",
+    "name": "Language Across the Curriculum",
+    "shortName": "Lang. Across Curriculum",
+    "totalTopics": 12,
+    "units": [
+      {
+        "index": 0,
+        "name": "Unit 1: Narrative & Descriptive Texts",
+        "mdFile": "./content/sem1/cc3/unit1.md"
+      },
+      {
+        "index": 1,
+        "name": "Unit 2: Expository Writing & Note-Making",
+        "mdFile": "./content/sem1/cc3/unit2.md"
+      },
+      {
+        "index": 2,
+        "name": "Unit 3: Journalistic Texts & Critical Reading",
+        "mdFile": "./content/sem1/cc3/unit3.md"
+      }
+    ]
+  }
+]

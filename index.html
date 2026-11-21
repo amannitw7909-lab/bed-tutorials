@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>B.Ed. Study Hub</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="theme-light" data-fontsize="md">
+
+  <!-- TOP NAV -->
+  <header class="topnav" role="banner">
+    <div class="topnav__brand">
+      <span class="topnav__icon">📚</span>
+      <span class="topnav__title">B.Ed. Study Hub</span>
+    </div>
+    <div class="topnav__controls">
+      <div class="search-wrap">
+        <input type="search" id="searchInput" placeholder="Search topics…" aria-label="Search topics" autocomplete="off" />
+        <div id="searchDropdown" class="search-dropdown" role="listbox" hidden></div>
+      </div>
+      <button id="langToggle" class="btn btn--icon" title="Toggle Language" aria-label="Toggle Language">EN / हि</button>
+      <button id="fontDec" class="btn btn--icon" title="Decrease Font" aria-label="Decrease font size">A−</button>
+      <button id="fontInc" class="btn btn--icon" title="Increase Font" aria-label="Increase font size">A+</button>
+      <button id="themeToggle" class="btn btn--icon" title="Toggle Theme" aria-label="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- LAYOUT WRAPPER -->
+  <div class="layout" id="appLayout">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar" aria-label="Subject navigation">
+      <button class="sidebar__close" id="sidebarClose" aria-label="Close sidebar">✕</button>
+      <div id="sidebarContent"><!-- populated by JS --></div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main" id="mainContent" role="main">
+
+      <!-- DASHBOARD (shown by default) -->
+      <section class="dashboard" id="dashboard">
+        <div class="dashboard__hero">
+          <h1>Welcome to B.Ed. Study Hub</h1>
+          <p>Your bilingual (English + Hindi) companion for B.Ed. exam preparation.</p>
+        </div>
+        <div class="dashboard__grid" id="dashboardGrid"><!-- populated by JS --></div>
+      </section>
+
+      <!-- TOPIC VIEWER (hidden until topic selected) -->
+      <section class="viewer" id="viewer" hidden>
+        <div class="viewer__toolbar">
+          <button class="btn btn--outline" id="backBtn">← Back</button>
+          <div class="viewer__meta">
+            <span id="viewerBreadcrumb" class="breadcrumb"></span>
+          </div>
+          <div class="progress-wrap">
+            <span id="progressLabel" class="progress-label"></span>
+            <button class="btn btn--sm" id="markReadBtn">✓ Mark as Read</button>
+          </div>
+        </div>
+        <div class="viewer__nav">
+          <button class="btn btn--outline" id="prevTopicBtn">‹ Prev</button>
+          <span id="topicCounter"></span>
+          <button class="btn btn--outline" id="nextTopicBtn">Next ›</button>
+        </div>
+        <article class="content-card" id="contentCard"><!-- rendered content --></article>
+        <div class="viewer__nav viewer__nav--bottom">
+          <button class="btn btn--outline" id="prevTopicBtn2">‹ Prev</button>
+          <button class="btn btn--outline" id="nextTopicBtn2">Next ›</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- SIDEBAR OPEN BUTTON (mobile) -->
+  <button class="fab-menu" id="fabMenu" aria-label="Open menu">☰</button>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="./data/content-store.js"></script>
+  <script src="./js/parser.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

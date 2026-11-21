@@ -1,0 +1,22 @@
+{
+  "name": "bed-tutorials",
+  "version": "1.0.0",
+  "description": "Bilingual (English + Hindi) Study Hub & Exam Notes for B.Ed. (Bachelor of Education)",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "serve": "npx serve . -p 3000",
+    "build:store": "node scripts/build-store.js",
+    "test": "node scripts/build-store.js"
+  },
+  "keywords": [
+    "b.ed",
+    "education",
+    "study-notes",
+    "bilingual",
+    "hindi",
+    "english",
+    "teacher-education"
+  ],
+  "author": "B.Ed. Study Hub Contributors",
+  "license": "MIT"
+}
