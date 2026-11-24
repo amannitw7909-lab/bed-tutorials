@@ -1,6 +1,6 @@
 /**
  * Auto-generated B.Ed. Study Hub Preloaded Content Store
- * Generated on: 2026-11-24T12:10:55.579Z
+ * Generated on: 2026-11-24T12:20:14.017Z
  * 
  * Provides offline & file:// compatibility for browsers where local fetch()
  * is restricted by security policies.
