@@ -52,6 +52,8 @@ body.theme-dark {
 /* ---- Reset & Base ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -274,7 +276,10 @@ body {
 
 /* ---- Main ---- */
 .main {
-  padding: 2rem 2.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--topnav-h));
+  padding: 2rem 2.5rem 2.5rem;
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
@@ -618,6 +623,80 @@ body {
 }
 .sidebar-overlay.active { display: block; }
 
+/* ---- Footer ---- */
+.app-footer {
+  margin-top: auto;
+  padding-top: 3.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid var(--clr-border);
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-dev {
+  font-size: 0.95rem;
+  color: var(--clr-text-muted);
+}
+
+.footer-author {
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  transition: all var(--transition);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.social-btn svg {
+  display: block;
+  transition: transform var(--transition);
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.social-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.social-btn--linkedin:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+  color: #ffffff;
+}
+
+.social-btn--instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   :root { --sidebar-w: 280px; }
@@ -654,6 +733,12 @@ body {
   .fab-menu { display: flex; }
   .topnav__title { display: none; }
   .search-wrap { max-width: 160px; min-width: 100px; }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -664,7 +749,7 @@ body {
 
 /* ---- Print ---- */
 @media print {
-  .topnav, .sidebar, .fab-menu, .viewer__toolbar, .viewer__nav { display: none !important; }
+  .topnav, .sidebar, .fab-menu, .viewer__toolbar, .viewer__nav, .app-footer { display: none !important; }
   .layout { display: block; margin-top: 0; }
   .main { padding: 0; max-width: 100%; }
   .content-card { box-shadow: none; border: none; }
