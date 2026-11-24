@@ -653,7 +653,7 @@ body {
 .footer-socials {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .social-btn {
@@ -662,39 +662,59 @@ body {
   justify-content: center;
   width: 38px;
   height: 38px;
-  border-radius: 50%;
-  border: 1px solid var(--clr-border);
-  background: var(--clr-surface);
-  color: var(--clr-text-muted);
+  border-radius: 10px;
   text-decoration: none;
-  transition: all var(--transition);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .social-btn svg {
   display: block;
-  transition: transform var(--transition);
+  transition: transform 0.25s ease;
 }
 
 .social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  transform: translateY(-3px) scale(1.08);
 }
 
 .social-btn:hover svg {
   transform: scale(1.1);
 }
 
-.social-btn--linkedin:hover {
+/* LinkedIn - Default: Official LinkedIn Blue Badge */
+.social-btn--linkedin {
   background: #0a66c2;
-  border-color: #0a66c2;
+  border: 1.5px solid #0a66c2;
   color: #ffffff;
+  box-shadow: 0 2px 8px rgba(10, 102, 194, 0.3);
 }
 
-.social-btn--instagram:hover {
+/* LinkedIn - Hover: Inverts to surface card with glowing blue border & icon */
+.social-btn--linkedin:hover {
+  background: var(--clr-surface);
+  border-color: #0a66c2;
+  color: #0a66c2;
+  box-shadow: 0 6px 18px rgba(10, 102, 194, 0.45);
+}
+
+/* Instagram - Default: Official Instagram Gradient Badge */
+.social-btn--instagram {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-  border-color: transparent;
+  border: 1.5px solid transparent;
   color: #ffffff;
+  box-shadow: 0 2px 8px rgba(214, 36, 159, 0.3);
+}
+
+/* Instagram - Hover: Inverts to surface card with glowing magenta border & gradient icon */
+.social-btn--instagram:hover {
+  background: var(--clr-surface);
+  border-color: #d6249f;
+  color: #d6249f;
+  box-shadow: 0 6px 18px rgba(214, 36, 159, 0.45);
+}
+
+.social-btn--instagram:hover svg {
+  stroke: url(#igHoverGrad);
 }
 
 /* ---- Responsive ---- */
